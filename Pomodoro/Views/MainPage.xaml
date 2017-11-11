@@ -19,12 +19,35 @@
         </Grid.RowDefinitions>
         <SplitView x:Name="SplitView" DisplayMode="CompactOverlay" IsPaneOpen="False" CompactPaneLength="00" OpenPaneLength="180" Grid.ColumnSpan="2" Grid.RowSpan="2">
             <SplitView.Pane>
-                <StackPanel Background="{ThemeResource SystemControlAcrylicElementBrush}">
-
-                </StackPanel>
+                <Grid Background="{ThemeResource SystemControlChromeHighAcrylicElementMediumBrush }">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <StackPanel Grid.Row="0">
+                        <StackPanel Orientation="Horizontal" Height="48"></StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <Button x:Name="TimerButton" FontFamily="Segoe MDL2 Assets" Content="&#xE823;"
+                   Width="48" Height="48" Background="Transparent" Click="TimerButton_Click"/>
+                            <TextBlock Text="Timer" FontSize="15" VerticalAlignment="Center" />
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <Button x:Name="LogButton" FontFamily="Segoe MDL2 Assets" Content="&#xE81C;"
+                       Width="48" Height="48" Background="Transparent" Click="LogButton_Click"/>
+                            <TextBlock Text="Log" FontSize="15" VerticalAlignment="Center" />
+                        </StackPanel>
+                    </StackPanel>
+                    <StackPanel Grid.Row="1">
+                        <StackPanel Orientation="Horizontal">
+                            <Button x:Name="SettingsButton" FontFamily="Segoe MDL2 Assets" Content="&#xE713;"
+                       Width="48" Height="48" Background="Transparent" Click="SettingsButton_Click"/>
+                            <TextBlock Text="Settings" FontSize="15" VerticalAlignment="Center" />
+                        </StackPanel>
+                    </StackPanel>
+                </Grid>
             </SplitView.Pane>
             <SplitView.Content>
-                <TextBlock Grid.ColumnSpan="2" Grid.Row="1" Text="Content" FontSize="24" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                <Frame x:Name="ContentFrame" />
             </SplitView.Content>
         </SplitView>
         <Button x:Name="TogglePaneButton" FontFamily="Segoe MDL2 Assets" Content="&#xE700;"

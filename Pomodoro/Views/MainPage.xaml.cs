@@ -18,5 +18,23 @@ namespace Pomodoro.Views
         {
             SplitView.IsPaneOpen = !SplitView.IsPaneOpen;
         }
+
+        private void TimerButton_Click(object sender, Windows.UI.Xaml.RoutedEventArgs e)
+        {
+            ContentFrame.Navigate(typeof(TimerPage));
+            SplitView.IsPaneOpen = false;
+        }
+
+        private void LogButton_Click(object sender, Windows.UI.Xaml.RoutedEventArgs e)
+        {
+            ContentFrame.Navigate(typeof(LogPage));
+            SplitView.IsPaneOpen = false;
+        }
+
+        private void SettingsButton_Click(object sender, Windows.UI.Xaml.RoutedEventArgs e)
+        {
+            ContentFrame.Navigate(typeof(SettingsPage));
+            SplitView.IsPaneOpen = false;
+        }
     }
 }
