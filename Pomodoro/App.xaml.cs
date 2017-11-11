@@ -1,12 +1,16 @@
-﻿using System;
+﻿using Pomodoro.Views;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
+using Windows.ApplicationModel.Core;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.UI;
+using Windows.UI.ViewManagement;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -67,6 +71,15 @@ namespace Pomodoro
                     // configuring the new page by passing required information as a navigation
                     // parameter
                     rootFrame.Navigate(typeof(MainPage), e.Arguments);
+
+                    var titleBar = ApplicationView.GetForCurrentView().TitleBar;
+                    titleBar.ButtonBackgroundColor = Colors.Transparent;
+                    CoreApplicationViewTitleBar coreTitleBar = CoreApplication.GetCurrentView().TitleBar;
+                    coreTitleBar.ExtendViewIntoTitleBar = true;
+
+                    ApplicationView.GetForCurrentView().SetPreferredMinSize(new Size(264, 400));
+                    ApplicationView.PreferredLaunchViewSize = new Size(264, 400);
+                    ApplicationView.PreferredLaunchWindowingMode = ApplicationViewWindowingMode.PreferredLaunchViewSize;
                 }
                 // Ensure the current window is active
                 Window.Current.Activate();
