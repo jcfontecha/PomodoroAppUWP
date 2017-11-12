@@ -8,7 +8,17 @@
     mc:Ignorable="d">
 
     <Grid Background="Transparent">
-        <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="32" Text="Timer" />
-        <local:ProgressIndicatorUserControl VerticalAlignment="Center" HorizontalAlignment="Center" Width="160" Height="160"></local:ProgressIndicatorUserControl>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50" />
+            <RowDefinition Height="0.8*" />
+            <RowDefinition Height="0.2*" />
+        </Grid.RowDefinitions>
+        <TextBlock Text="Timer" FontSize="24" Margin="50,7,0,0" FontWeight="SemiLight"/>
+        <local:ProgressIndicatorUserControl Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center" Width="160" Height="160"></local:ProgressIndicatorUserControl>
+        <CommandBar Grid.Row="2" Background="Transparent" VerticalAlignment="Center" HorizontalAlignment="Center" ClosedDisplayMode="Compact" >
+            <AppBarButton x:Name="playepisode" Icon="Cancel" Label="Stop"/>
+            <AppBarButton x:Name="downloadepisode" Icon="Play" Label="Play" />
+            <AppBarButton x:Name="favoriteepisode" Icon="Accept" Label="Done"/>
+        </CommandBar>
     </Grid>
 </Page>

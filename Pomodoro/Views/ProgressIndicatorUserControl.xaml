@@ -5,11 +5,30 @@
     xmlns:local="using:Pomodoro.Views"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    mc:Ignorable="d"
-    d:DesignHeight="300"
-    d:DesignWidth="400">
+    mc:Ignorable="d">
 
-    <Canvas x:Name="Canvas">
-        
-    </Canvas>
+    <Grid>
+        <Canvas x:Name="Canvas"></Canvas>
+        <TextBlock x:Name="MinutesTextBlock"
+                   FontSize="57"
+                   FontWeight="SemiLight"
+                   Text="25"
+                   VerticalAlignment="Center"
+                   HorizontalAlignment="Center"
+                   Width="70"
+                   Height="80"
+                   Margin="0,-20,0,0"
+                   TextAlignment="Center" />
+        <TextBlock x:Name="SecondsTextBlock"
+                   FontSize="15"
+                   FontWeight="SemiLight"
+                   Text=":00"
+                   VerticalAlignment="Center"
+                   HorizontalAlignment="Center"
+                   Width="20"
+                   Height="20"
+                   Margin="0,60,0,0"
+                   TextAlignment="Center"
+                   Foreground="#FF4A4A4A" />
+    </Grid>
 </UserControl>

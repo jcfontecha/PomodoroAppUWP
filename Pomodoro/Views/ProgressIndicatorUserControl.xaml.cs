@@ -1,5 +1,6 @@
 ﻿using System;
 using Windows.Foundation;
+using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Shapes;
@@ -12,6 +13,7 @@ namespace Pomodoro.Views
     {
         public float Radius { get; set; } = 80;
         public float Increment { get; set; } = 0.07f;
+        public double Completion { get; set; } = 0.5;
 
         public ProgressIndicatorUserControl()
         {
@@ -25,11 +27,11 @@ namespace Pomodoro.Views
         private Shape CreateCircle()
         {
             var circle = new Polyline();
-            circle.Stroke = new SolidColorBrush(Windows.UI.Colors.Red);
+            circle.Stroke = Application.Current.Resources["PomodoroColorBrush"] as Brush;
             circle.StrokeThickness = 10;
             var points = new PointCollection();
 
-            for (double i = -Math.PI / 2; i <= (3 * Math.PI / 2 + Increment); i += Increment)
+            for (double i = (-Math.PI / 2) * (1.0 - Completion); i <= (3 * Math.PI / 2 + Increment); i += Increment)
             {
                 var point = GetCircleCoordinates(i);
                 points.Add(point);
