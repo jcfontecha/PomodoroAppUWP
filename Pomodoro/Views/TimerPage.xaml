@@ -9,5 +9,6 @@
 
     <Grid Background="Transparent">
         <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="32" Text="Timer" />
+        <local:ProgressIndicatorUserControl VerticalAlignment="Center" HorizontalAlignment="Center" Width="160" Height="160"></local:ProgressIndicatorUserControl>
     </Grid>
 </Page>
